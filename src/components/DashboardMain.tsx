@@ -1,4 +1,4 @@
-import Link from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
     MessageCircle,
     Users,
@@ -224,32 +224,32 @@ export default function DashboardMain() {
             <div className="mt-8 bg-white rounded-xl p-6 shadow-sm border">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Быстрые действия</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <button className="flex items-center justify-center p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors group">
+                    <Link to="/dashboard/chats" className="flex items-center justify-center p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors group">
                         <div className="text-center">
                             <MessageCircle className="h-8 w-8 text-gray-400 group-hover:text-blue-500 mx-auto mb-2" />
                             <span className="text-sm font-medium text-gray-600 group-hover:text-blue-600">
                 Начать новый чат
               </span>
                         </div>
-                    </button>
+                    </Link>
 
-                    <button className="flex items-center justify-center p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-green-500 hover:bg-green-50 transition-colors group">
+                    <Link to="/dashboard/analytics" className="flex items-center justify-center p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-green-500 hover:bg-green-50 transition-colors group">
                         <div className="text-center">
                             <BarChart3 className="h-8 w-8 text-gray-400 group-hover:text-green-500 mx-auto mb-2" />
                             <span className="text-sm font-medium text-gray-600 group-hover:text-green-600">
                 Посмотреть отчеты
               </span>
                         </div>
-                    </button>
+                    </Link>
 
-                    <button className="flex items-center justify-center p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-colors group">
+                    <Link to="/dashboard/clients" className="flex items-center justify-center p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-colors group">
                         <div className="text-center">
                             <Users className="h-8 w-8 text-gray-400 group-hover:text-purple-500 mx-auto mb-2" />
                             <span className="text-sm font-medium text-gray-600 group-hover:text-purple-600">
-                Управление командой
+                Управление клиентами
               </span>
                         </div>
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

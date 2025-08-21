@@ -9,7 +9,10 @@ import {
     LogOut,
     Menu,
     X,
-    Bell
+    Bell,
+    UserCheck,
+    DollarSign,
+    CheckSquare
 } from 'lucide-react';
 import {useLanguage} from '../contexts/LanguageContext';
 import {useAuth} from '../contexts/AuthContext';
@@ -28,6 +31,9 @@ export default function DashboardLayout({children, currentPage = 'main'}: Dashbo
     const navigation = [
         {name: 'Главная', href: '#', icon: Home, id: 'main'},
         {name: 'Чаты', href: '/dashboard?page=chats', icon: MessageCircle, id: 'chats'},
+        {name: 'Клиенты', href: '/dashboard/clients', icon: UserCheck, id: 'clients'},
+        {name: 'Сделки', href: '/dashboard/deals', icon: DollarSign, id: 'deals'},
+        {name: 'Задачи', href: '/dashboard/tasks', icon: CheckSquare, id: 'tasks'},
         {name: 'Аналитика', href: '#', icon: BarChart3, id: 'analytics'},
         {name: 'Команда', href: '#', icon: Users, id: 'team'},
         {name: 'Настройки', href: '#', icon: Settings, id: 'settings'},
@@ -59,8 +65,8 @@ export default function DashboardLayout({children, currentPage = 'main'}: Dashbo
                         <ul className="space-y-2">
                             {navigation.map((item) => (
                                 <li key={item.name}>
-                                    <a
-                                        href={item.href}
+                                    <Link
+                                        to={item.href}
                                         className={`flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
                                             currentPage === item.id
                                                 ? 'bg-blue-100 text-blue-700'
@@ -69,7 +75,7 @@ export default function DashboardLayout({children, currentPage = 'main'}: Dashbo
                                     >
                                         <item.icon className="mr-3 h-5 w-5"/>
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -90,8 +96,8 @@ export default function DashboardLayout({children, currentPage = 'main'}: Dashbo
                         <ul className="space-y-2">
                             {navigation.map((item) => (
                                 <li key={item.name}>
-                                    <a
-                                        href={item.href}
+                                    <Link
+                                        to={item.href}
                                         className={`flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
                                             currentPage === item.id
                                                 ? 'bg-blue-100 text-blue-700'
@@ -100,7 +106,7 @@ export default function DashboardLayout({children, currentPage = 'main'}: Dashbo
                                     >
                                         <item.icon className="mr-3 h-5 w-5"/>
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

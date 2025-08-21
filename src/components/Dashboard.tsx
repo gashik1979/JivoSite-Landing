@@ -1,31 +1,20 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
 import { 
   MessageCircle, 
   Users, 
   Clock, 
   TrendingUp, 
-  Settings, 
-  User, 
-  LogOut,
   Send,
   MoreVertical,
   Search
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import {useAuth} from "../contexts/AuthContext.tsx";
 
 export default function Dashboard() {
   const { t } = useLanguage();
   const [selectedChat, setSelectedChat] = useState(0);
   const [newMessage, setNewMessage] = useState('');
 
-  const {logout} = useAuth();
-
-  const handleLogout = () => {
-    logout();
-    window.location.pathname = '/';
-  };
 
   const stats = [
     {
@@ -138,43 +127,7 @@ export default function Dashboard() {
   return (
 
 
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-
-              <Link to="/" className="flex items-center">
-                <MessageCircle className="h-8 w-8 text-blue-600" />
-                <span className="ml-2 text-xl font-bold text-gray-900">ChatPro</span>
-              </Link>
-
-            
-            <div className="flex items-center space-x-4">
-              <button className="p-2 text-gray-400 hover:text-gray-600 transition-colors">
-                <Settings className="h-5 w-5" />
-              </button>
-              <div className="flex items-center space-x-2">
-                <img
-                  src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=1"
-                  alt="Profile"
-                  className="w-8 h-8 rounded-full"
-                />
-                <span className="text-sm font-medium text-gray-700">Оператор</span>
-              </div>
-              <button
-                  onClick={handleLogout}
-                  className="p-2 text-gray-400 hover:text-gray-600 transition-colors"
-                  title="Выйти"
-              >
-                <LogOut className="h-5 w-5"/>
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="p-6">
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {stats.map((stat, index) => (
@@ -327,7 +280,6 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }
