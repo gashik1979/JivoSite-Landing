@@ -13,11 +13,24 @@ import {NotificationProvider} from "./components/NotificationProvider";
 import { AuthGuard } from "./AuthGuard";
 import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
+import CookiePolicyPage from "./pages/CookiePolicyPage";
+import ConstructorWizard from "./components/Constructor/ConstructorWizard";
+import CookieNotice from "./components/CookieNotice";
 
 export function AppContent() {
     return (
         <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+            
+            <Route
+                path="/constructor"
+                element={
+                    <AuthGuard>
+                        <ConstructorWizard />
+                    </AuthGuard>
+                }
+            />
 
             <Route
                 path="/dashboard"
@@ -98,6 +111,7 @@ function App() {
             <AuthProvider>
                 <LanguageProvider>
                     <AppContent/>
+                    <CookieNotice />
                 </LanguageProvider>
             </AuthProvider>
         </NotificationProvider>
