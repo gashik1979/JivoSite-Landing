@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, Check, Upload, Palette, Monitor, MessageSquare, Download, Globe } from 'lucide-react';
-import { useLanguage } from '../../contexts/LanguageContext';
-import AdminSetupStep from './steps/AdminSetupStep';
-import ChatSettingsStep from './steps/ChatSettingsStep';
-import AppearanceStep from './steps/AppearanceStep';
-import PurposeStep from './steps/PurposeStep';
-import IntegrationStep from './steps/IntegrationStep';
-import PreviewWidget from './PreviewWidget';
+import { useLanguage } from '../../contexts/LanguageContext.tsx';
+import AdminSetupStep from '../../components/Constructor/steps/AdminSetupStep.tsx';
+import ChatSettingsStep from '../../components/Constructor/steps/ChatSettingsStep.tsx';
+import AppearanceStep from '../../components/Constructor/steps/AppearanceStep.tsx';
+import PurposeStep from '../../components/Constructor/steps/PurposeStep.tsx';
+import IntegrationStep from '../../components/Constructor/steps/IntegrationStep.tsx';
+import PreviewWidget from '../../components/Constructor/PreviewWidget.tsx';
 
 interface ConstructorData {
   admin: {

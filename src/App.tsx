@@ -5,16 +5,16 @@ import {AuthProvider} from './contexts/AuthContext';
 import Dashboard from './components/Dashboard';
 import DashboardMain from './components/DashboardMain';
 import DashboardLayout from './components/DashboardLayout';
-import ClientsPage from './components/CRM/ClientsPage';
-import DealsPage from './components/CRM/DealsPage';
-import TasksPage from './components/CRM/TasksPage';
-import AnalyticsPage from './components/CRM/AnalyticsPage';
+import ClientsPage from './pages/CRM/ClientsPage';
+import DealsPage from './pages/CRM/DealsPage';
+import TasksPage from './pages/CRM/TasksPage';
+import AnalyticsPage from './pages/CRM/AnalyticsPage';
 import {NotificationProvider} from "./components/NotificationProvider";
 import { AuthGuard } from "./AuthGuard";
 import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import CookiePolicyPage from "./pages/CookiePolicyPage";
-import ConstructorWizard from "./components/Constructor/ConstructorWizard";
+import ConstructorWizard from "./pages/sites/ConstructorWizard.tsx";
 import CookieNotice from "./components/CookieNotice";
 
 export function AppContent() {
