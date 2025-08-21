@@ -134,7 +134,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setUser(res.data.user);
         localStorage.setItem('chatpro_user', JSON.stringify(res.data.user));
         localStorage.setItem("token", res.data.token);
-        navigate("/dashboard");
+        navigate("/constructor");
         return true;
       }
       return false;
@@ -153,7 +153,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setUser(res.data.user);
         localStorage.setItem('chatpro_user', JSON.stringify(res.data.user));
         localStorage.setItem("token", res.data.token);
-        navigate("/dashboard");
+        navigate("/constructor");
         return true;
       }
       return false;
