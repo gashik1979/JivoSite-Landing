@@ -12,7 +12,7 @@ import {
     Bell,
     UserCheck,
     DollarSign,
-    CheckSquare
+    CheckSquare,
     Kanban
 } from 'lucide-react';
 import {useLanguage} from '../contexts/LanguageContext';
