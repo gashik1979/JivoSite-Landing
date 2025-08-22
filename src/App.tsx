@@ -16,6 +16,7 @@ import NotFound from "./pages/NotFound";
 import CookiePolicyPage from "./pages/CookiePolicyPage";
 import ConstructorWizard from "./pages/sites/ConstructorWizard.tsx";
 import CookieNotice from "./components/CookieNotice";
+import CRMPage from "./pages/CRM/CRMPage";
 
 export function AppContent() {
     return (
@@ -54,6 +55,16 @@ export function AppContent() {
                 }
             />
 
+            <Route
+                path="/dashboard/crm"
+                element={
+                    <AuthGuard>
+                        <DashboardLayout currentPage="crm">
+                            <CRMPage />
+                        </DashboardLayout>
+                    </AuthGuard>
+                }
+            />
             <Route
                 path="/dashboard/clients"
                 element={

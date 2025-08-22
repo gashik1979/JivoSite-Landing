@@ -13,6 +13,7 @@ import {
     UserCheck,
     DollarSign,
     CheckSquare
+    Kanban
 } from 'lucide-react';
 import {useLanguage} from '../contexts/LanguageContext';
 import {useAuth} from '../contexts/AuthContext';
@@ -31,6 +32,7 @@ export default function DashboardLayout({children, currentPage = 'main'}: Dashbo
     const navigation = [
         {name: 'Главная', href: '#', icon: Home, id: 'main'},
         {name: 'Чаты', href: '/dashboard?page=chats', icon: MessageCircle, id: 'chats'},
+        {name: 'CRM', href: '/dashboard/crm', icon: Kanban, id: 'crm'},
         {name: 'Клиенты', href: '/dashboard/clients', icon: UserCheck, id: 'clients'},
         {name: 'Сделки', href: '/dashboard/deals', icon: DollarSign, id: 'deals'},
         {name: 'Задачи', href: '/dashboard/tasks', icon: CheckSquare, id: 'tasks'},
